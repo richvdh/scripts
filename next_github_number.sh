@@ -16,6 +16,9 @@ case "$origin_url" in
         ;;
 esac
 
+# trim .git from the end as the API doesn't expect it
+repo=${repo%.git}
+
 echo $repo
 
 # Fetch the current GitHub issue number, add one to it -- presto! The likely
